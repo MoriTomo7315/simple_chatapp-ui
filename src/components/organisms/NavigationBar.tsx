@@ -19,6 +19,7 @@ export const NavigationBar = ({ activeTab = "chat", onTabClick }: NavigationBarP
         const isActive = activeTab === tab.id;
         return (
           <button
+            type="button"
             key={tab.id}
             onClick={() => onTabClick?.(tab.id)}
             className={`p-3 transition-colors ${
@@ -33,4 +34,3 @@ export const NavigationBar = ({ activeTab = "chat", onTabClick }: NavigationBarP
     </nav>
   );
 };
-
