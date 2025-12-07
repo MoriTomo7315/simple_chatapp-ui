@@ -21,7 +21,7 @@ export const NavigationBar = ({ activeTab = "chat", onTabClick }: NavigationBarP
           <button
             key={tab.id}
             onClick={() => onTabClick?.(tab.id)}
-            className={`p-2 transition-colors ${
+            className={`p-3 transition-colors ${
               isActive ? "text-orange-500" : "text-white"
             }`}
             aria-label={tab.id}

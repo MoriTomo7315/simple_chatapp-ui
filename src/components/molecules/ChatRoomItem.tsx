@@ -19,7 +19,7 @@ export const ChatRoomItem = ({
   return (
     <button
       onClick={onClick}
-      className="w-full flex items-center gap-3 px-4 py-3 border-b border-gray-700 hover:bg-gray-800 transition-colors"
+      className="w-full flex items-center gap-3 px-4 py-3 border-b border-gray-700 active:bg-gray-800 transition-colors"
     >
       <Avatar src={avatarSrc} alt={avatarAlt} size="md" />
       <div className="flex-1 flex items-center justify-between min-w-0">
