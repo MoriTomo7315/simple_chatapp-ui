@@ -1,8 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Simple Chat App UI
 
-## Getting Started
+シンプルなチャットアプリケーションのフロントエンドUIリポジトリです。
 
-First, run the development server:
+## Background
+
+このUIは、チャットアプリケーション作成の学習のためのものです。スクリーン等のベースの初回作成を[Cursor](https://cursor.sh/)で主に作成しています。
+
+## Technology Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) 16.0.4 
+- **UI Library**: [React](https://react.dev/) 19.2.0
+- **Language**: [TypeScript](https://www.typescriptlang.org/) 5
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) 4
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/) 
+
+## Run this app
+
+このアプリケーションをローカル環境で実行するには、以下の手順に従ってください。
+
+### Prerequisite
+
+- [Node.js](https://nodejs.org/) 18.0.0以上がインストールされていること
+- npm、yarn、pnpm、またはbunがインストールされていること
+
+### Setting up
+
+Please run [simple_chatapp-api](https://github.com/MoriTomo7315/simple_chatapp-api) beforehands.
+
+```bash
+npm install
+# または
+yarn install
+# または
+pnpm install
+```
+
+### Run the development server
 
 ```bash
 npm run dev
@@ -14,23 +47,34 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Specification
 
-## Learn More
+### Screens
 
-To learn more about Next.js, take a look at the following resources:
+1. **チャットルーム一覧画面** (`/`)
+   - チャットルームのリスト表示
+   - 各チャットルームの新着表示
+   - チャットルームをクリックして詳細画面に遷移
+   - ナビゲーションバー（チャット、作成、検索、プロフィールタブ）　※実際には検索とプロフィールタブは未実装
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **チャットルーム詳細画面** (`/chatroom/[id]`)
+   - メッセージの一覧表示
+   - メッセージの送信機能
+   - 送信者と受信者のメッセージを区別して表示
+   - アバター画像の表示
+   - タイムスタンプの表示
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+
+
+## Licenses
+
+このプロジェクトは学習目的で作成されています。
