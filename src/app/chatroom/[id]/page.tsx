@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import { ChatRoomTemplate } from "../../../components/templates/ChatRoomTemplate";
 import type { Message } from "../../../components/molecules/MessageItem";
+import { Icon } from "../../../components/atoms/Icon";
 
 const getAvatarUrl = (name: string) => {
   return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=random&color=fff&size=128`;
@@ -139,8 +140,8 @@ export default function ChatRoomPage() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-black text-white">
-        <p>読み込み中...</p>
+      <div className="flex items-center justify-center h-screen bg-background text-foreground">
+        <Icon name="loading" size={48} />
       </div>
     );
   }

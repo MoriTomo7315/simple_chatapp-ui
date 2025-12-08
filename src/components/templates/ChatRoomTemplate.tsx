@@ -17,7 +17,7 @@ export const ChatRoomTemplate = ({
   onSendMessage,
 }: ChatRoomTemplateProps) => {
   return (
-    <div className="flex flex-col h-screen bg-black text-white">
+    <div className="flex flex-col h-screen bg-background text-foreground">
       <ChatRoomHeader name={name} />
       <MessageList messages={messages} />
       <MessageInput onSend={onSendMessage} />

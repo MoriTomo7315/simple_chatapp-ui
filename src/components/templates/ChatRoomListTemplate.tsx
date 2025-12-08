@@ -19,7 +19,7 @@ export const ChatRoomListTemplate = ({
   onTabClick,
 }: ChatRoomListTemplateProps) => {
   return (
-    <div className="flex flex-col h-screen bg-black text-white">
+    <div className="flex flex-col h-screen bg-background text-foreground">
       <Header title="チャットルーム一覧" />
       <ChatRoomList chatRooms={chatRooms} onChatRoomClick={onChatRoomClick} />
       <NavigationBar activeTab="chat" onTabClick={onTabClick} />
