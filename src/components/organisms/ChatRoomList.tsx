@@ -1,4 +1,5 @@
 import { ChatRoomItem } from "../molecules/ChatRoomItem";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export interface ChatRoom {
   id: string;
@@ -15,17 +16,19 @@ interface ChatRoomListProps {
 
 export const ChatRoomList = ({ chatRooms, onChatRoomClick }: ChatRoomListProps) => {
   return (
-    <div className="flex-1 overflow-y-auto">
-      {chatRooms.map((chatRoom) => (
-        <ChatRoomItem
-          key={chatRoom.id}
-          avatarSrc={chatRoom.avatarSrc}
-          avatarAlt={chatRoom.avatarAlt}
-          name={chatRoom.name}
-          unreadCount={chatRoom.unreadCount}
-          onClick={() => onChatRoomClick?.(chatRoom)}
-        />
-      ))}
+    <div className="flex-1 overflow-hidden">
+      <ScrollArea className="h-full">
+        {chatRooms.map((chatRoom) => (
+          <ChatRoomItem
+            key={chatRoom.id}
+            avatarSrc={chatRoom.avatarSrc}
+            avatarAlt={chatRoom.avatarAlt}
+            name={chatRoom.name}
+            unreadCount={chatRoom.unreadCount}
+            onClick={() => onChatRoomClick?.(chatRoom)}
+          />
+        ))}
+      </ScrollArea>
     </div>
   );
 };

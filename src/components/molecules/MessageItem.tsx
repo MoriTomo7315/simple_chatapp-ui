@@ -1,4 +1,5 @@
 import { Avatar } from "../atoms/Avatar";
+import { cn } from "@/lib/utils";
 
 export type Message = {
   id: string;
@@ -24,10 +25,13 @@ export const MessageItem = ({ message }: MessageItemProps) => {
   if (message.isSent) {
     return (
       <div className="flex flex-col items-end px-4 mb-2">
-        <div className="max-w-[70%] rounded-2xl px-4 py-2 bg-[#FF7B29] text-white rounded-tl-2xl">
-          <p className="text-white text-base wrap-break-word">{message.text}</p>
+        <div className={cn(
+          "max-w-[70%] rounded-2xl px-4 py-2 bg-primary text-primary-foreground",
+          "border border-primary"
+        )}>
+          <p className="text-base break-words">{message.text}</p>
         </div>
-        <span className="text-gray-400 text-xs mt-1 px-1">{formatTime(message.timestamp)}</span>
+        <span className="text-muted-foreground text-xs mt-1 px-1">{formatTime(message.timestamp)}</span>
       </div>
     );
   }
@@ -42,11 +46,14 @@ export const MessageItem = ({ message }: MessageItemProps) => {
             size="sm"
           />
         )}
-        <div className="max-w-[70%] rounded-2xl px-4 py-2 bg-[#2B2E33] text-white rounded-bl-2xl">
-          <p className="text-white text-base wrap-break-word">{message.text}</p>
+        <div className={cn(
+          "max-w-[70%] rounded-2xl px-4 py-2 bg-secondary text-secondary-foreground",
+          "border border-border"
+        )}>
+          <p className="text-base break-words">{message.text}</p>
         </div>
       </div>
-      <span className="text-gray-400 text-xs mt-1 px-1 ml-10">{formatTime(message.timestamp)}</span>
+      <span className="text-muted-foreground text-xs mt-1 px-1 ml-10">{formatTime(message.timestamp)}</span>
     </div>
   );
 };

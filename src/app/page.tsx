@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ChatRoomListTemplate, type ChatRoom } from "../components/templates/ChatRoomListTemplate";
+import { Icon } from "../components/atoms/Icon";
 
 const getAvatarUrl = (name: string) => {
   return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=random&color=fff&size=128`;
@@ -66,15 +67,15 @@ export default function Home() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-black text-white">
-        <p>読み込み中...</p>
+      <div className="flex items-center justify-center h-screen bg-background text-foreground">
+        <Icon name="loading" size={48} />
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="flex items-center justify-center h-screen bg-black text-white">
+      <div className="flex items-center justify-center h-screen bg-background text-foreground">
         <p>チャットルームの読み込みに失敗しました</p>
       </div>
     );

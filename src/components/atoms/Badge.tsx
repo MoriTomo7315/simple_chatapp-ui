@@ -1,3 +1,6 @@
+import { Badge as ShadcnBadge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
+
 interface BadgeProps {
   count: number;
 }
@@ -6,9 +9,16 @@ export const Badge = ({ count }: BadgeProps) => {
   if (count === 0) return null;
 
   return (
-    <div className="flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-orange-500 text-white text-xs font-medium">
+    <ShadcnBadge
+      variant="default"
+      className={cn(
+        "flex items-center justify-center min-w-[24px] h-6 px-2 rounded-full",
+        "bg-primary text-primary-foreground font-semibold text-xs",
+        "shadow-sm ring-1 ring-primary/20"
+      )}
+    >
       {count > 99 ? "99+" : count}
-    </div>
+    </ShadcnBadge>
   );
 };
 

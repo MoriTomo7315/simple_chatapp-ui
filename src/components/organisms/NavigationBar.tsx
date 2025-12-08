@@ -1,4 +1,7 @@
 import { Icon } from "../atoms/Icon";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 
 interface NavigationBarProps {
   activeTab?: "chat" | "create" | "search" | "profile";
@@ -14,23 +17,29 @@ export const NavigationBar = ({ activeTab = "chat", onTabClick }: NavigationBarP
   ];
 
   return (
-    <nav className="flex items-center justify-around px-4 py-3 border-t border-gray-700 bg-black">
-      {tabs.map((tab) => {
-        const isActive = activeTab === tab.id;
-        return (
-          <button
-            type="button"
-            key={tab.id}
-            onClick={() => onTabClick?.(tab.id)}
-            className={`p-3 transition-colors ${
-              isActive ? "text-orange-500" : "text-white"
-            }`}
-            aria-label={tab.id}
-          >
-            <Icon name={tab.icon} size={24} />
-          </button>
-        );
-      })}
-    </nav>
+    <>
+      <Separator />
+      <nav className="flex items-center justify-around px-4 py-3">
+        {tabs.map((tab) => {
+          const isActive = activeTab === tab.id;
+          return (
+            <Button
+              type="button"
+              key={tab.id}
+              variant="ghost"
+              size="icon"
+              onClick={() => onTabClick?.(tab.id)}
+              className={cn(
+                "p-3",
+                isActive ? "text-primary" : "text-muted-foreground"
+              )}
+              aria-label={tab.id}
+            >
+              <Icon name={tab.icon} size={24} />
+            </Button>
+          );
+        })}
+      </nav>
+    </>
   );
 };
