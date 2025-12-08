@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { ChatRoomListTemplate, type ChatRoom } from "../components/templates/ChatRoomListTemplate";
 
 const getAvatarUrl = (name: string) => {
@@ -32,6 +33,7 @@ const fetchChatRooms = async (user: { id: string; name: string } | null): Promis
 };
 
 export default function Home() {
+  const router = useRouter();
   const [user, setUser] = useState<{ id: string; name: string } | null>(null);
   const [chatRooms, setChatRooms] = useState<ChatRoom[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -54,9 +56,8 @@ export default function Home() {
     loadChatRooms();
   }, [user]);
 
-  //TODO: implement chat room click handler to navigate to the chat room
   const handleChatRoomClick = (chatRoom: ChatRoom) => {
-    console.log("Chat room clicked:", chatRoom);
+    router.push(`/chatroom/${chatRoom.id}`);
   };
 
   const handleTabClick = (tab: "chat" | "create" | "search" | "profile") => {

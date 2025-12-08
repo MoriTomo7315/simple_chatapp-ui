@@ -1,5 +1,5 @@
 interface IconProps {
-  name: "edit" | "chat" | "plus" | "search" | "profile";
+  name: "edit" | "chat" | "plus" | "search" | "profile" | "arrow-left" | "send";
   className?: string;
   size?: number;
 }
@@ -83,6 +83,38 @@ export const Icon = ({ name, className = "", size = 24 }: IconProps) => {
       >
         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
         <circle cx="12" cy="7" r="4" />
+      </svg>
+    ),
+    "arrow-left": (
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={className}
+      >
+        <path d="M19 12H5" />
+        <path d="M12 19l-7-7 7-7" />
+      </svg>
+    ),
+    send: (
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={className}
+      >
+        <path d="M22 2L11 13" />
+        <path d="M22 2l-7 20-4-9-9-4z" />
       </svg>
     ),
   };
